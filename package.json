@@ -1,0 +1,23 @@
+{
+  "name": "eclaim-mis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-google-chart": "^0.1.0",
+    "angular-route": "^1.6.2",
+    "bootstrap": "^3.3.7",
+    "gulp": "^3.9.1",
+    "startbootstrap-sb-admin-2": "^3.3.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

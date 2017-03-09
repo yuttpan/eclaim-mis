@@ -1,21 +1,21 @@
 var gulp = require('gulp');
  
-// สร้าง task ที่มีชื่อว่า "siamhtml"
 
-// เพิ่ม task "browser-sync" ให้ทำพร้อม default task
-gulp.task('browser-sync', function() {
-    browserSync({
+var gulp        = require('gulp');
+var browserSync = require('browser-sync').create();
+var reload      = browserSync.reload;
+
+// Save a reference to the `reload` method
+
+// Watch scss AND html files, doing different things with each.
+gulp.task('default', function () {
+
+    // Serve files from the root of this project
+    browserSync.init({
         server: {
             baseDir: "./"
         }
     });
-});
-gulp.task('default', ['browser-sync'], function() {
- 
-    // เมื่อไฟล์ html หรือ css มีการเปลี่ยนแปลง ก็ให้รีเฟรช web browser
-    gulp.watch(['**/*.html'], browserSync.reload);
-    gulp.watch(['css/**/*.css'], browserSync.reload);
- 
-    // เมื่อไฟล์ scss มีการเปลี่ยนแปลง ก็ให้ทำ task "sass" 
-   // gulp.watch("scss/**/*.scss", ['sass']);
+
+    gulp.watch("*.html").on("change", reload);
 });
